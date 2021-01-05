@@ -27,4 +27,12 @@ albums: Album[] = [];
   editAlbum(id : number){
     this.router.navigate(['editalbum', id]);
   }
+
+  deleteAlbum(id: number){
+    this.albumService.deleteAlbum(id).subscribe(data=>{
+      console.log(data);
+      this.getAlbums();
+
+    })
+  }
 }

@@ -20,6 +20,7 @@
             <td> {{ album.type }}</td>
             <td>
                 <button (click) = "editAlbum(album.id)" class="btn btn-info">Edit</button>
+                <button (click) = "deleteAlbum(album.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
             </td>
         </tr>
     </tbody>

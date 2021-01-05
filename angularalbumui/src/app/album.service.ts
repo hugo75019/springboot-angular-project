@@ -20,11 +20,15 @@ export class AlbumService {
   }
 
   getAlbumById(id : number): Observable<Album>{
-    return this.httpClient.get<Album>(`${this.baseURL}/$ {id}}`);
+    return this.httpClient.get<Album>(`${this.baseURL}/${id}}`);
   }
 
   editAlbum(id: number, album : Album): Observable<Object>{
     return this.httpClient.put(`${this.baseURL}/${id}}`, album);
+  }
+
+  deleteAlbum(id:number):Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 
 }

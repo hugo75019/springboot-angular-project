@@ -25,7 +25,7 @@ export class EditAlbumComponent implements OnInit {
     }, error => console.log(error));    
   }
 
-  onSubmit(){
+  editformonSubmit(){
     this.albumService.editAlbum(this.id, this.album).subscribe(data =>{
       this.goToAlbumList();
     }, error => console.log(error));
