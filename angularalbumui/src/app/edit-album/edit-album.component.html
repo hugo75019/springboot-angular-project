@@ -1,0 +1,32 @@
+<div class="col-md-4 offset-md-4">
+    <h3>Edit album</h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label> Artist </label>
+            <input type="text" class ="form-control" id = "artist"
+                [(ngModel)] = "album.artist" name = "artist">
+        </div>
+        <div class="form-group">
+            <label> Title </label>
+            <input type="text" class ="form-control" id = "title"
+                [(ngModel)] = "album.title" name = "title">
+        </div>
+        <div class="form-group">
+            <label> Genre </label>
+            <input type="text" class ="form-control" id = "genre"
+                [(ngModel)] = "album.genre" name = "genre">
+        </div>
+        <div class="form-group">
+            <label for="sel1">Type</label>
+            <select class="form-control" id="sel1" 
+                [(ngModel)] = "album.type" name = "type">
+                <option>CD</option>
+                <option>Vinyle</option>
+                <option>Digital</option>
+                
+            </select>
+        </div>
+    
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+    </div>
