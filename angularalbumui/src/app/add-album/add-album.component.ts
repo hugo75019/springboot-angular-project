@@ -32,5 +32,4 @@ export class AddAlbumComponent implements OnInit {
     console.log(this.album);
     this.saveAlbum();
   }
-
 }

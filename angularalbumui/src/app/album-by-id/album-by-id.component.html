@@ -1,0 +1,25 @@
+<p>album-by-id works!</p>
+<div class="container">
+    <h2>Album</h2>
+    <div class="row">
+      <div class="col-3 col-sm-3 col-md-3 col-lg-3 mb-3">
+        <div class="alb">
+          <div class="card-body">
+            <h5 class="card-title">{{ album.title }}</h5>
+            <p>Artist: {{ album.artist }}</p>
+            <p class="card-text">{{ album.genre }}</p>
+            <a href="#" class="btn btn-success">Voir</a>
+            <a
+              routerLink="/edit-album/{{ album.id }}"
+              class="btn btn-warning"
+            >
+              Modifier
+            </a>
+            <a class="btn btn-danger" (click)="deleteAlbum(album.id)">
+              Supprimer
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
