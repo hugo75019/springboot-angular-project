@@ -25,13 +25,22 @@ export class EditAlbumComponent implements OnInit {
       this.album = data;
     }, error => console.log(error));    
   }
-
+  
+  editedAlbum() {
+    this.albumService.editAlbum(this.id, this.album)
+      .subscribe(data => {
+        console.log(data);
+        this.album = new Album();
+        this.goToList();
+      }, error => console.log(error));
+  } 
+  /*
   editedAlbum(){
     this.albumService.editAlbum(this.id, this.album).subscribe(data=>console.log(data),
     error=>console.log(error));
     this.album = new Album();
     this.goToList();
-  }
+  }*/
   OnSubmit(){
     this.editedAlbum();
   }

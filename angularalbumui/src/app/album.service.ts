@@ -9,6 +9,8 @@ import { Album } from './album'
 export class AlbumService {
 
   private baseURL = "http://localhost:8088/api/v1/albums";
+
+  
   constructor(private httpClient: HttpClient) { }
 
   getAlbumsList(): Observable<Album[]>{
@@ -24,7 +26,7 @@ export class AlbumService {
   }
 
   editAlbum(id: number, album : Album): Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}/${id}}`, album);
+    return this.httpClient.put(`${this.baseURL}/${id}`, album);
   }
 
   deleteAlbum(id:number):Observable<Object>{
