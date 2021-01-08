@@ -11,12 +11,12 @@ import { AlbumService } from '../album.service';
 })
 export class ViewAlbumComponent implements OnInit {
 
-  id: string = '';
+  id: number = 0;
   album!: Album;
   constructor(private route :ActivatedRoute, private albumService : AlbumService, private router: Router) { }
 
    ngOnInit() {
-    this.album = new Album("","","","");
+    this.album = new Album();
 
     this.id = this.route.snapshot.params['id'];
     

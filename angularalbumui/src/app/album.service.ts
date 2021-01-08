@@ -19,8 +19,8 @@ export class AlbumService {
     return this.httpClient.post(`${this.baseURL}`, album);
   }
 
-  getAlbumById(id : number): Observable<Album>{
-    return this.httpClient.get<Album>(`${this.baseURL}/${id}}`);
+  getAlbumById(id: number): Observable<any> {
+    return this.httpClient.get(`${this.baseURL}/${id}`);
   }
 
   editAlbum(id: number, album : Album): Observable<Object>{

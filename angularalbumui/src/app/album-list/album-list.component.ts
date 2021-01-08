@@ -24,6 +24,11 @@ albums: Album[] = [];
   });
 }
 
+  viewAlbum(id : number){
+    this.router.navigate(['viewalbum', id]);
+
+  }
+
   editAlbum(id : number){
     this.router.navigate(['editalbum', id]);
   }

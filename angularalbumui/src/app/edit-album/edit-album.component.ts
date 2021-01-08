@@ -19,20 +19,24 @@ export class EditAlbumComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.album = new Album();
     this.id = this.route.snapshot.params['id'];
     this.albumService.getAlbumById(this.id).subscribe(data =>{
       this.album = data;
     }, error => console.log(error));    
   }
 
-  editformonSubmit(){
-    this.albumService.editAlbum(this.id, this.album).subscribe(data =>{
-      this.goToAlbumList();
-    }, error => console.log(error));
+  editedAlbum(){
+    this.albumService.editAlbum(this.id, this.album).subscribe(data=>console.log(data),
+    error=>console.log(error));
+    this.album = new Album();
+    this.goToList();
+  }
+  OnSubmit(){
+    this.editedAlbum();
   }
 
-  
-  goToAlbumList(){
+    goToList(){
     this.router.navigate(['/albums']);
   }
 }
