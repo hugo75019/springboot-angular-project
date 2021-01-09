@@ -1,15 +1,16 @@
 <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+   
 </head>
 
 <body style="background-color:  rgb(64, 240, 152);">
+    
+
 <h2> Album List</h2>
 
-<table class="table table-dark table-striped table-hover ">
+<table id="albumtable"class="table table-dark table-striped table-hover ">
     <thead>
         <tr >
-            <th> Artist </th>
+            <th onclick="sortTable(0)"> Artist </th>
             <th> Title </th>
             <th> Genre </th>
             <th> Type </th>
@@ -24,11 +25,13 @@
             <td> {{ album.genre }}</td>
             <td> {{ album.type }}</td>
             <td>
-                <button (click) = "editAlbum(album.id)" class="btn btn-info">Edit</button>
-                <button (click) = "viewAlbum(album.id)" class="btn btn-success" style="margin-left: 10px">View</button>
+                <button (click) = "viewAlbum(album.id)" class="btn btn-success" >View</button>
+                <button (click) = "editAlbum(album.id)" class="btn btn-info" style="margin-left: 10px">Edit</button>
                 <button (click) = "deleteAlbum(album.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
             </td>
         </tr>
     </tbody>
 </table>
 </body>
+
+
